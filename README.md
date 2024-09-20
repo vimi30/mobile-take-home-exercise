@@ -4,37 +4,34 @@ Code Sample
 We would like to get to know your coding style and see what you would consider your best work.
 In subsequent interviews, we'll talk through your code and make some changes.
 
-CLI RPN Calculator
-==================
+Mobile RPN Calculator
+=====================
 
-Implement a command-line reverse polish notation (RPN) calculator using a language that you know well.
+Implement a reverse polish notation (RPN) calculator as a native Android or iOS app. You can use any language and framework that you know well, as long as it's a native implementation (e.g. we don't want React Native or Flutter apps).
 
 Imaginary Context
 -----------------
 
-We're building this command-line calculator for people who are comfortable with UNIX-like CLI utilities.
-We are starting with the basic 4 operators now but will want to eventually implement other operators and
-an alternate interface (such as WebSocket, file, or TCP socket).
-There's no need to implement these, but design with these future changes in mind.
+We're building this mobile calculator for people who are comfortable with RPN calculations on their smartphones. We are starting with the basic 4 operators now but will want to eventually implement other operators and potentially on other devices. There's no need to implement these, but design with these future changes in mind.
 
 Specifications
 --------------
 
-1. The calculator should use standard input and standard output
+1. The calculator should have a user-friendly mobile interface
 2. It should implement the four standard arithmetic operators
-3. The calculator should handle errors and recover gracefully
-4. The calculator should exit when it receives a `q` command or an end of input 
-   indicator (EOF / Ctrl+D)
+3. The calculator should handle errors and provide clear feedback to the user
+4. The app should have a clear way to reset the calculation or start a new one
 
-You may take creative liberty with anything else; have fun with it!
+You may take creative liberty with the UI design and anything else; have fun with it!
+
 
 Example Input/Output
 --------------------
 
-Use your best judgment as far as the format is concerned, as long as it makes sense to the end user. Your calculator should at the minimum handle the following examples. 
+Use your best judgment as far as the format is concerned, as long as it makes sense to the end user. Your calculator should at the minimum handle the following examples.
 
-    > 5 
-    5
+    > 5 // Lines starting with > are user inputs
+    5 // Lines without > are outputs displayed on the screen
     > 8
     8
     > +
@@ -73,6 +70,8 @@ Use your best judgment as far as the format is concerned, as long as it makes se
     > /
     0.625
 
+
+
 Guidelines
 ==========
 
@@ -98,7 +97,8 @@ Write your README as if it was for a production service. Include the following i
 * A high-level description of your solution
 * Reasoning behind your technical choices, including architectural
 * Trade-offs you might have made, anything you left out, or what you might do differently if you were to spend additional time on the project
-* How to run your code, if applicable
+* How to run your code, including any necessary setup for the mobile development environment
+* Instructions on how to use the simulator or emulator to test the app
 * Link to the hosted application, if applicable
 
 Submitting
