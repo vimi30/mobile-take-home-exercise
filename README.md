@@ -1,107 +1,119 @@
-Code Sample
-===================
+## RPN Calculator
 
-We would like to get to know your coding style and see what you would consider your best work.
-In subsequent interviews, we'll talk through your code and make some changes.
+A modern Android calculator app implementing the Reverse Polish Notation (RPN) calculation method, built with Jetpack Compose and Material Design 3.
 
-Mobile RPN Calculator
-=====================
+## Overview
 
-Implement a reverse polish notation (RPN) calculator as a native Android or iOS app. You can use any language and framework that you know well, as long as it's a native implementation (e.g. we don't want React Native or Flutter apps).
+RPN Calculator offers a sleek, user-friendly interface for performing calculations using Reverse Polish Notation. Unlike traditional calculators, RPN eliminates the need for parentheses by using postfix notation, where operators follow their operands, enabling efficient and intuitive calculations.
 
-Imaginary Context
------------------
+## Features
+- **Real-time calculations** as you type.
+- **Space-separated input** for numbers and operators.
+- **Error feedback** for invalid inputs.
+- Support for basic arithmetic operations: `+`, `-`, `*`, `/`.
+- **Material Design 3** with dynamic theming.
+- **Dark/Light theme** support.
 
-We're building this mobile calculator for people who are comfortable with RPN calculations on their smartphones. We are starting with the basic 4 operators now but will want to eventually implement other operators and potentially on other devices. There's no need to implement these, but design with these future changes in mind.
+## Technical Architecture
 
-Specifications
---------------
+### Technology Stack
+- Kotlin
+- Jetpack Compose
+- Material Design 3
+- Android Architecture Components (ViewModel)
+- Kotlin Flows for state management
 
-1. The calculator should have a user-friendly mobile interface
-2. It should implement the four standard arithmetic operators
-3. The calculator should handle errors and provide clear feedback to the user
-4. The app should have a clear way to reset the calculation or start a new one
+### Architecture Overview
 
-You may take creative liberty with the UI design and anything else; have fun with it!
+The app follows a simplified MVVM (Model-View-ViewModel) architecture:
+- Model: Represents the app’s core data and business logic.
+- ViewModel: Manages UI-related data and survives configuration changes.
+- View: The composable UI layer powered by Jetpack Compose.
+
+### Technical Decisions
+
+- Jetpack Compose: For modern, declarative UI development and better maintainability.
+- ViewModel: For efficient state management and configuration change handling.
+- Kotlin Flow: Ensures reactive state updates with lifecycle integration.
+- Single-Activity Architecture: Simplifies navigation for the app’s scope.
+
+## Trade-offs and Future Improvements
+
+### Current Trade-offs
+- Limited to basic arithmetic operations.
+- No calculation history.
+- No state persistence.
+
+### Potential Improvements
+- Add advanced mathematical operations.
+- Implement calculation history.
+- Introduce state persistence.
+- Support for multiple calculation modes.
+- Increase unit testing coverage.
+- Add UI testing using the Compose testing framework.
+
+## Setup and Installation
+
+### Prerequisites
+- Android Studio Hedgehog | 2023.1.1 or newer.
+- JDK 17.
+- Android SDK with minimum API level 26 (Android 8.0).
+
+### Building the Project
+1. Clone the repository:
+
+        git clone https://github.com/vimi30/rpn-calculator.git
+
+2. Open in Android Studio:
+- Open Android Studio
+- Select "Open an existing project"
+- Navigate to the cloned repository
+- Click "Open"
+- Build the project:
+- Wait for Gradle sync to complete
+- Select Build > Make Project
+
+## Running the App
+
+### Using Android Emulator
+- Open AVD Manager in Android Studio.
+- Create a new virtual device if none exists.
+- Select a device definition (e.g., Pixel 6).
+- Choose a system image (API 26 or higher).
+- Click Run (▶️) or press Shift+F10.
+
+### Using Physical Device
+- Enable Developer Options on your device.
+- Enable USB Debugging.
+- Connect your device via USB.
+- Select your device from the target device dropdown.
+- Click Run (▶️).
+
+## Using the Calculator
+
+### Basic Operation
+- Enter numbers and operators separated by spaces.
+- Example: 2 3 + 4 * equals (2 + 3) * 4 = 20.
+
+### Example Calculations
+| **Input**       | **Result** |
+|------------------|------------|
+| `5 2 +`         | `7`        |
+| `10 4 - 3 *`    | `18`       |
+| `2 3 + 4 *`     | `20`       |
+| `15 7 1 1 + - /`| `5`        |
 
 
-Example Input/Output
---------------------
 
-Use your best judgment as far as the format is concerned, as long as it makes sense to the end user. Your calculator should at the minimum handle the following examples.
+### Input Format
+- Numbers: Any valid decimal number.
+- Operators: +, -, *, /.
+- Separate all entries with spaces.
 
-    > 5 // Lines starting with > are user inputs
-    5 // Lines without > are outputs displayed on the screen
-    > 8
-    8
-    > +
-    13
+### Error Handling
+- Division by zero.
+- Invalid number format.
+- Insufficient operands for the operation.
 
----
-
-    > 5 5 5 8 + + -
-    -13.0
-    > 13 +
-    0.0
-
----
-
-    > -3
-    -3.0
-    > -2
-    -2.0
-    > *
-    6.0
-    > 5
-    5.0
-    > +
-    11.0
-
----
-
-    > 5
-    5
-    > 9
-    9
-    > 1
-    1
-    > -
-    8
-    > /
-    0.625
-
-
-
-Guidelines
-==========
-
-Things We Care About
---------------------
-
-These hold true both for this submission and for your work here in general. We expect that:
-
-- It works right
-- The code is well-abstracted and uses good names
-- It provides for a good user experience (end-user and programmer)
-- The code adheres to style and practices accepted by the community
-- Tests demonstrate intended use, help prevent regression, and can withstand change
-- You write intention-revealing commit messages
-
-There are a range of expectations from various companies in their interviewing code exercises, from minimal code to get the job done and prove you can program, to expecting exemplary code that demonstrates how well you can design things when the occasion requires it. We tend to judge toward the latter end of the spectrum, assuming that anyone who can write well-crafted code can also scale down quality to do things quickly, but not necessarily the other way around.
-
-Readme
-------
-
-Write your README as if it was for a production service. Include the following items:
-
-* A high-level description of your solution
-* Reasoning behind your technical choices, including architectural
-* Trade-offs you might have made, anything you left out, or what you might do differently if you were to spend additional time on the project
-* How to run your code, including any necessary setup for the mobile development environment
-* Instructions on how to use the simulator or emulator to test the app
-* Link to the hosted application, if applicable
-
-Submitting
-----------
-
-Submit your code as a **separate** git repository, preferably on GitHub
+## Demo
+https://github.com/user-attachments/assets/dbe42917-3bee-4de8-8f77-48fb80a8be9a
