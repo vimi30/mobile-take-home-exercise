@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RPN Calculator</string>
+    
+    <!-- Calculator Display -->
+    <string name="expression_result">Expression Result</string>
+    <string name="no_calculations">No calculations yet</string>
+    <string name="type_instructions">Type numbers and operators separated by spaces</string>
+    
+    <!-- Calculator Input -->
+    <string name="rpn_expression">RPN Expression</string>
+    <string name="enter_expression">Enter expression</string>
+    <string name="example_expression">Example: 2 3 + 4 *</string>
+    <string name="clear">Clear</string>
+    <string name="available_operators">Available operators: +, -, *, /</string>
+</resources>
